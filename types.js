@@ -56,7 +56,7 @@ type ExchangeOpts = {
   internal?: boolean,
   autoDelete?: boolean,
   alternateExchange?: string,
-  arguments: Args
+  arguments?: Args
 };
 
 type ExchangeOk = {
@@ -125,7 +125,7 @@ declare module "amqplib" {
     bindQueue(queue: string, exchange: string, routingKey: string, args?: Args): Promise<void>;
     unbindQueue(queue: string, exchange: string, routingKey: string, args?: Args): Promise<void>;
 
-    assertExchange(exchange: string, type: ExchangeType, opts: ExchangeOpts): Promise<ExchangeOk>;
+    assertExchange(exchange: string, type: ExchangeType, opts?: ExchangeOpts): Promise<ExchangeOk>;
     checkExchange(exchange: string): Promise<ExchangeOk>; // TODO check return val
     deleteExchange(exchange: string, opts?: ExchangeDeleteOpts): Promise<void>;
     bindExchange(dst: string, src: string, routingKey: string, args?: Args): Promise<void>;
