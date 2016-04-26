@@ -134,7 +134,7 @@ declare module "amqplib" {
     publish(exchange: string, routingKey: string, content: Buffer, opts?: PublishOpts): boolean;
     sendToQueue(queue: string, content: Buffer, opts?: PublishOpts): boolean;
 
-    consume(queue: string, fn: (msg: ?Message) => any, opts?: ConsumeOpts): Promise<{}>; // TODO
+    consume(queue: string, fn: (msg: ?Message) => any, opts?: ConsumeOpts): Promise<{ consumerTag: string }>;
     cancel(consumerTag: string): Promise<{}>; // TODO
     get(queue: string, opts?: GetOpts): Promise<false | Message>;
     ack(message: Message, allUpTo?: boolean): void;
