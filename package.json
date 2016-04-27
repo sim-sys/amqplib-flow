@@ -4,11 +4,15 @@
   "description": "amqp.node type declarations for Flow",
   "main": "index.js",
   "scripts": {
-    "test": "exit 0"
+    "test": "exit 0",
+    "install": "flow-types install"
   },
   "author": "Vladimir Kurchatkin <vladimir.kurchatkin@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "flow-bin": "0.23.1"
+  },
+  "dependencies": {
+    "flow-types": "1.0.0"
   }
 }
