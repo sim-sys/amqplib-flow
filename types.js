@@ -116,7 +116,7 @@ declare module "amqplib" {
     properties: PublishOpts;
   }
 
-  declare class Channel {
+  declare class Channel extends events$EventEmitter {
     close(): Promise<void>;
     assertQueue(queue: ?string, options?: QueueOptions): Promise<QueueOk>;
     checkQueue(queue: string): Promise<QueueOk>;
